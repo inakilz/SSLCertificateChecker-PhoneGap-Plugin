@@ -1,5 +1,8 @@
 # PhoneGap SSL Certificate Checker plugin
 
+<strong>Note: Added trust in the SSL certificate by default to the original plugin (https://github.com/EddyVerbruggen/SSLCertificateChecker-PhoneGap-Plugin)</strong>
+
+
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
 [![Twitter Follow][twitter-image]][twitter-url]
@@ -40,7 +43,6 @@ everytime you communicate with the server. In either case, you can add your logi
 * Compatible with [Cordova Plugman](https://github.com/apache/cordova-plugman).
 * [Officially supported by PhoneGap Build](https://build.phonegap.com/plugins).
 
-<strong>Note: Added trust in the SSL certificate by default to the original plugin (https://github.com/EddyVerbruggen/SSLCertificateChecker-PhoneGap-Plugin)</strong>
 
 ## 2. Installation
 
