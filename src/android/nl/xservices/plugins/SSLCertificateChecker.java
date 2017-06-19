@@ -14,6 +14,12 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateEncodingException;
 
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+import javax.net.ssl.SSLContext;
+import java.security.cert.X509Certificate;
+import java.security.KeyManagementException;
+
 public class SSLCertificateChecker extends CordovaPlugin {
 
   private static final String ACTION_CHECK_EVENT = "check";
@@ -48,6 +54,7 @@ public class SSLCertificateChecker extends CordovaPlugin {
   }
 
   private static String getFingerprint(String httpsURL) throws IOException, NoSuchAlgorithmException, CertificateException, CertificateEncodingException {
+    disableSSLCertificateChecking();
     final HttpsURLConnection con = (HttpsURLConnection) new URL(httpsURL).openConnection();
     con.setConnectTimeout(5000);
     con.connect();
@@ -56,6 +63,33 @@ public class SSLCertificateChecker extends CordovaPlugin {
     md.update(cert.getEncoded());
     return dumpHex(md.digest());
   }
+
+  private static void disableSSLCertificateChecking() {
+    TrustManager[] trustAllCerts = new TrustManager[] {
+        new X509TrustManager() {
+            public X509Certificate[] getAcceptedIssuers() {
+                return null;
+            }
+            @Override
+            public void checkClientTrusted(X509Certificate[] arg0, String arg1) {
+                // Not implemented
+            }
+            @Override
+            public void checkServerTrusted(X509Certificate[] arg0, String arg1) {
+                // Not implemented
+            }
+        }
+    };
+    try {
+        SSLContext sc = SSLContext.getInstance("TLS");
+        sc.init(null, trustAllCerts, new java.security.SecureRandom());
+        HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+    } catch (KeyManagementException e) {
+        e.printStackTrace();
+    } catch (NoSuchAlgorithmException e) {
+        e.printStackTrace();
+    }
+ }
 
   private static String dumpHex(byte[] data) {
     final int n = data.length;
