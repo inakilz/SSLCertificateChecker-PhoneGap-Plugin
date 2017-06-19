@@ -2,22 +2,6 @@
 
 <strong>Note: Added trust in the SSL certificate by default to the original plugin (https://github.com/EddyVerbruggen/SSLCertificateChecker-PhoneGap-Plugin)</strong>
 
-
-[![NPM version][npm-image]][npm-url]
-[![Downloads][downloads-image]][npm-url]
-[![Twitter Follow][twitter-image]][twitter-url]
-
-[npm-image]:http://img.shields.io/npm/v/cordova-plugin-sslcertificatechecker.svg
-[npm-url]:https://npmjs.org/package/cordova-plugin-sslcertificatechecker
-[downloads-image]:http://img.shields.io/npm/dm/cordova-plugin-sslcertificatechecker.svg
-[twitter-image]:https://img.shields.io/twitter/follow/eddyverbruggen.svg?style=social&label=Follow%20me
-[twitter-url]:https://twitter.com/eddyverbruggen
-
-1. [Description](https://github.com/EddyVerbruggen/SSLCertificateChecker-PhoneGap-Plugin#1-description)
-2. [Installation](https://github.com/EddyVerbruggen/SSLCertificateChecker-PhoneGap-Plugin#2-installation)
-3. [Usage](https://github.com/EddyVerbruggen/SSLCertificateChecker-PhoneGap-Plugin#3-usage)
-4. [Credits](https://github.com/EddyVerbruggen/SSLCertificateChecker-PhoneGap-Plugin#4-credits)
-
 <table width="100%">
     <tr>
         <td width="100">Need SSL Pinning?</td>
