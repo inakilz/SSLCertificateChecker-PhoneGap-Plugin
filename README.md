@@ -40,22 +40,13 @@ everytime you communicate with the server. In either case, you can add your logi
 * Compatible with [Cordova Plugman](https://github.com/apache/cordova-plugman).
 * [Officially supported by PhoneGap Build](https://build.phonegap.com/plugins).
 
-## 2. Installation
+<strong>Note: Added trust in the SSL certificate by default to the original plugin (https://github.com/EddyVerbruggen/SSLCertificateChecker-PhoneGap-Plugin)</strong>
 
-Latest stable version from npm:
-```
-$ cordova plugin add cordova-plugin-sslcertificatechecker
-```
+## 2. Installation
 
 Bleeding edge version from Github:
 ```
-$ cordova plugin add https://github.com/EddyVerbruggen/SSLCertificateChecker-PhoneGap-Plugin
-```
-
-### PhoneGap Build
-
-```xml
-<gap:plugin name="cordova-plugin-sslcertificatechecker" />
+$ cordova plugin add https://github.com/inakilz/SSLCertificateChecker-PhoneGap-Plugin
 ```
 
 ## 3. Usage
